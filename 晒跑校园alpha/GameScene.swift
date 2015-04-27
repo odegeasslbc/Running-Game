@@ -11,15 +11,15 @@ import Social
 
 class GameOverScene:SKScene{
     
-    let labelRestart:SKLabelNode!
+    let labelRestart = SKLabelNode(fontNamed:"Chalkduster")
     var tmpDelay:CGFloat!
     let buttonShare = SKLabelNode(fontNamed:"Chalkduster")
-    let score:Int!
+    var score:Int!
     
-    init(size:CGSize,score:Int,tmp:CGFloat){
-        super.init(size:size)
+    init(size:CGSize, score: Int, delay: CGFloat){
+        super.init(size: size)
+        self.tmpDelay = delay
         self.score = score
-        tmpDelay = tmp
         self.backgroundColor = SKColor(red: 81.0/255.0, green: 192.0/255.0, blue: 201.1/255.0, alpha: 1.0)
         var hardOrEasy = "中"
         if tmpDelay < 0.5 { hardOrEasy = "难"}
@@ -52,7 +52,6 @@ class GameOverScene:SKScene{
         boy.physicsBody?.affectedByGravity = false
         self.addChild(boy)
         
-        labelRestart = SKLabelNode(fontNamed:"Chalkduster")
         labelRestart.text = "restart"
         labelRestart.fontSize = 40
         labelRestart.fontColor = SKColor.blackColor()
@@ -74,9 +73,9 @@ class GameOverScene:SKScene{
         }
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
 
-        var touch:UITouch = touches.anyObject() as UITouch
+        var touch:UITouch = touches.first as! UITouch
         let location = touch.locationInNode(self)
 
         if(didTouchButton(button:labelRestart,location:location)){
@@ -117,7 +116,7 @@ class GameOverScene:SKScene{
             let activityItems = [image,text]
             let activityController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
             activityController
-            (self.view!.nextResponder() as UIViewController).presentViewController(activityController, animated: true, completion: nil)
+            (self.view!.nextResponder() as! UIViewController).presentViewController(activityController, animated: true, completion: nil)
             
             //UIImageWriteToSavedPhotosAlbum(image,nil,nil,nil)
             //showAlert()
@@ -535,7 +534,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
         moving.speed = 1
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
         
         for touch: AnyObject in touches {
@@ -581,7 +580,9 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
             {
                 stopScene()
                 let reveal = SKTransition.flipHorizontalWithDuration(0.5);
-                let gameOverScene = GameOverScene(size:self.size,score:score,tmp:delayTime);
+                let gameOverScene = GameOverScene(size:self.size, score: score, delay: delayTime);
+                //gameOverScene.score = score
+                //gameOverScene.tmpDelay = delayTime
                 self.view?.presentScene(gameOverScene, transition: reveal);
             }
             

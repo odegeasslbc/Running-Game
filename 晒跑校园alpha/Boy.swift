@@ -19,7 +19,7 @@ class Boy:SKSpriteNode {
     var initialY:CGFloat = 345.6
     
     
-    override init(){
+    init(){
         let boyTexture1 = SKTexture(imageNamed: "跑01")
         boyTexture1.filteringMode = SKTextureFilteringMode.Nearest
         let color = UIColor.whiteColor()

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6491BB51-0977-45B6-A74E-046B6DD745CB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>晒跑校园alpha</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D5C42469EA357D40FEA2370C035FC8FC4B51A4B0</key>
+		<string>https://github.com/odegeasslbc/running_game.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>晒跑校园alpha.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D5C42469EA357D40FEA2370C035FC8FC4B51A4B0</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/odegeasslbc/running_game.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D5C42469EA357D40FEA2370C035FC8FC4B51A4B0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D5C42469EA357D40FEA2370C035FC8FC4B51A4B0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>%E6%99%92%E8%B7%91%E6%A0%A1%E5%9B%ADalpha</string>
+		</dict>
+	</array>
+</dict>
+</plist>
