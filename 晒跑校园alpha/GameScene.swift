@@ -300,7 +300,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
     }
     //生成一个building
     func createBuilding(){
-        let tmp = arc4random() % 4
+        let tmp = arc4random() % 6
         
         var tmpHeight = 10
         //减掉一定高度，使产生的building呈现出不同高度
@@ -311,6 +311,10 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
             tmpHeight = 70
         case 3:
             tmpHeight = 0
+        case 4:
+            tmpHeight = 100
+        case 5:
+            tmpHeight = 80
         default:
             tmpHeight = 40
          
@@ -326,13 +330,14 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
         let moveAndRemove = SKAction.sequence([moveBuilding,removeBuilding])
         newBuilding.name = "building"
         newBuilding.runAction(moveAndRemove)
+        
         newBuilding.physicsBody?.dynamic = false
         newBuilding.physicsBody?.categoryBitMask = buildingCategory
         newBuilding.physicsBody?.contactTestBitMask = boyCategory
         newBuilding.physicsBody?.collisionBitMask = boyCategory
-        
-        buildings.addChild(newBuilding)
-        
+        if tmpHeight < 160 {
+            buildings.addChild(newBuilding)
+        }
     }
     
     //生成一系列enemy
