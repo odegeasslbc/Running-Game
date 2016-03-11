@@ -14,13 +14,20 @@ import AssetsLibrary
 extension SKNode {
     class func unarchiveFromFile(file : NSString) -> SKNode? {
         if let path = NSBundle.mainBundle().pathForResource(file as String, ofType: "sks") {
-            var sceneData = NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe, error: nil)!
-            var archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
+            do{
+                let sceneData = try NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe)
+                let archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
+                
+                archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
+                let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! GameScene
+                archiver.finishDecoding()
+                return scene
+            }catch{
+                print(error)
+                return nil
+            }
             
-            archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
-            let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! GameScene
-            archiver.finishDecoding()
-            return scene
+
         } else {
             return nil
         }
@@ -37,6 +44,7 @@ class GameViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var fliterSlider: UISlider!
 
+    @IBOutlet var bgc: UIImageView!
     @IBOutlet weak var easyButton: UIButton!
     @IBOutlet weak var middleButton: UIButton!
     @IBOutlet weak var hardButton: UIButton!
@@ -57,12 +65,12 @@ class GameViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     
     //设置游戏难易程度
     @IBAction func setHardOrEasy(button:UIButton!){
-        if button.titleLabel?.text == "难"{
-            delayTime = 0.3
-        } else if button.titleLabel?.text == "中"{
+        if button.titleLabel?.text == "hard"{
+            delayTime = 0.8
+        } else if button.titleLabel?.text == "mid"{
             delayTime = 1.1
-        } else if button.titleLabel?.text == "易"{
-            delayTime = 2.2
+        } else if button.titleLabel?.text == "easy"{
+            delayTime = 1.9
         }
     }
     
@@ -97,6 +105,7 @@ class GameViewController: UIViewController,UIImagePickerControllerDelegate,UINav
             easyButton.hidden = true
             hardButton.hidden = true
             middleButton.hidden = true
+            bgc.hidden = true
         }
 
     }
@@ -111,18 +120,14 @@ class GameViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         self.presentViewController(pickerC, animated: true, completion: nil)
         
     }
-
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
-        
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         self.dismissViewControllerAnimated(true, completion: nil);
-        let gotImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let gotImage = image
         beginImage = CIImage(image: gotImage)
         filter.setValue(beginImage, forKey: kCIInputImageKey)
         orientation = gotImage.imageOrientation
         self.amountSliderValueChanged(fliterSlider)
-        
-        println(info);
-        
     }
 
     //保存图片
@@ -133,15 +138,15 @@ class GameViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         let image = scaleToSize(tmpImage!, size: imageFrame)
         let filePath = NSHomeDirectory() + "/Documents/head.png"
         //println(filePath)
-        UIImageJPEGRepresentation(image, 1.0).writeToFile(filePath, atomically: true)
+        UIImageJPEGRepresentation(image, 1.0)!.writeToFile(filePath, atomically: true)
     }
     
     //剪裁图片使其以正好的大小显示在游戏里
     func scaleToSize(img:UIImage , size: CGSize) -> UIImage{
         UIGraphicsBeginImageContextWithOptions(size,false,1.0)
-        imageView.layer.renderInContext(UIGraphicsGetCurrentContext())
+        imageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         
-        let context = UIGraphicsGetCurrentContext()
+        _ = UIGraphicsGetCurrentContext()
         let rect = CGRectMake(0, 0, size.width, size.height)
 
         img.drawInRect(rect)
@@ -154,8 +159,12 @@ class GameViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     @IBAction func clearPhoto(sender:AnyObject) {
         let filePath = NSHomeDirectory() + "/Documents/head.png"
         let fileManager = NSFileManager()
-        fileManager.removeItemAtPath(filePath,error:nil)
-
+        
+        do{
+            try fileManager.removeItemAtPath(filePath)
+        }catch{
+            print(error)
+        }
     }
     //调整滤镜的效果
     @IBAction func amountSliderValueChanged(sender: UISlider) {
@@ -169,7 +178,7 @@ class GameViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         
         let outputImage = filter.outputImage
         
-        let cgimg = context.createCGImage(outputImage, fromRect: outputImage.extent())
+        let cgimg = context.createCGImage(outputImage!, fromRect: outputImage!.extent)
         
         
         let newImage = UIImage(CGImage: cgimg, scale:1, orientation:orientation)
@@ -184,14 +193,14 @@ class GameViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         goBackButton.hidden = true
         
         let fileURL = NSBundle.mainBundle().URLForResource("楪祈1", withExtension: "jpg")
-        beginImage = CIImage(contentsOfURL: fileURL)
+        beginImage = CIImage(contentsOfURL: fileURL!)
         
         filter = CIFilter(name: "CISepiaTone")
         filter.setValue(beginImage, forKey: kCIInputImageKey)
         filter.setValue(0.5, forKey: kCIInputIntensityKey)
         
         context = CIContext(options:nil)
-        let cgimg = context.createCGImage(filter.outputImage,fromRect:filter.outputImage.extent())
+        let cgimg = context.createCGImage(filter.outputImage!,fromRect:filter.outputImage!.extent)
         let newImage = UIImage(CGImage:cgimg)
         self.imageView.image = newImage
         imageView.layer.cornerRadius = 80;
@@ -204,11 +213,11 @@ class GameViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     }
     
     //调整游戏页面的方向
-    override func supportedInterfaceOrientations() -> Int {
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return Int(UIInterfaceOrientationMask.Landscape.rawValue)
+            return UIInterfaceOrientationMask.Landscape
         } else {
-            return Int(UIInterfaceOrientationMask.Landscape.rawValue)
+            return UIInterfaceOrientationMask.Landscape
         }
     }
 

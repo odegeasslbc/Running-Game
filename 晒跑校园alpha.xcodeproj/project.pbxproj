@@ -9,14 +9,19 @@
 /* Begin PBXBuildFile section */
 		62064DFA19FFB65D0012B5F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62064DF919FFB65D0012B5F9 /* AppDelegate.swift */; };
 		62064DFC19FFB65D0012B5F9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 62064DFB19FFB65D0012B5F9 /* GameScene.sks */; };
-		62064DFE19FFB65D0012B5F9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62064DFD19FFB65D0012B5F9 /* GameScene.swift */; };
-		62064E0019FFB65D0012B5F9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62064DFF19FFB65D0012B5F9 /* GameViewController.swift */; };
-		62064E0519FFB65D0012B5F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62064E0419FFB65D0012B5F9 /* Images.xcassets */; };
 		62064E0819FFB65D0012B5F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62064E0619FFB65D0012B5F9 /* LaunchScreen.xib */; };
 		62064E1419FFB65D0012B5F9 /* ____alphaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62064E1319FFB65D0012B5F9 /* ____alphaTests.swift */; };
-		62064E1E19FFB8D00012B5F9 /* Boy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62064E1D19FFB8D00012B5F9 /* Boy.swift */; };
 		6227F8111A14749B00AD6998 /* 楪祈1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6227F8101A14749B00AD6998 /* 楪祈1.jpg */; };
-		628A09C91A008BE300D8FCBE /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628A09C81A008BE300D8FCBE /* Enemy.swift */; };
+		623016A51B3BB2BE0025E726 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623016A41B3BB2BE0025E726 /* GameScene.swift */; };
+		623016A61B3BB2BE0025E726 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623016A41B3BB2BE0025E726 /* GameScene.swift */; };
+		623016A81B3BB2E80025E726 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623016A71B3BB2E80025E726 /* GameViewController.swift */; };
+		623016A91B3BB2E80025E726 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623016A71B3BB2E80025E726 /* GameViewController.swift */; };
+		623016AB1B3BB3640025E726 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 623016AA1B3BB3640025E726 /* Images.xcassets */; };
+		623016AC1B3BB3640025E726 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 623016AA1B3BB3640025E726 /* Images.xcassets */; };
+		623016AE1B3BB3C40025E726 /* Boy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623016AD1B3BB3C40025E726 /* Boy.swift */; };
+		623016AF1B3BB3C40025E726 /* Boy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623016AD1B3BB3C40025E726 /* Boy.swift */; };
+		623016B11B3BB3DC0025E726 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623016B01B3BB3DC0025E726 /* Enemy.swift */; };
+		623016B21B3BB3DC0025E726 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623016B01B3BB3DC0025E726 /* Enemy.swift */; };
 		628D89E11A26EF0600268618 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 628D89E01A26EF0600268618 /* Social.framework */; };
 		62A35DAE1A26219400EF008A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62A35DAD1A26219400EF008A /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -36,16 +41,16 @@
 		62064DF819FFB65D0012B5F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62064DF919FFB65D0012B5F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62064DFB19FFB65D0012B5F9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		62064DFD19FFB65D0012B5F9 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		62064DFF19FFB65D0012B5F9 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		62064E0419FFB65D0012B5F9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		62064E0719FFB65D0012B5F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		62064E0D19FFB65D0012B5F9 /* 晒跑校园alphaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "晒跑校园alphaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62064E1219FFB65D0012B5F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62064E1319FFB65D0012B5F9 /* ____alphaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "____alphaTests.swift"; sourceTree = "<group>"; };
-		62064E1D19FFB8D00012B5F9 /* Boy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boy.swift; sourceTree = "<group>"; };
 		6227F8101A14749B00AD6998 /* 楪祈1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "楪祈1.jpg"; sourceTree = "<group>"; };
-		628A09C81A008BE300D8FCBE /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+		623016A41B3BB2BE0025E726 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		623016A71B3BB2E80025E726 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		623016AA1B3BB3640025E726 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		623016AD1B3BB3C40025E726 /* Boy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boy.swift; sourceTree = "<group>"; };
+		623016B01B3BB3DC0025E726 /* Enemy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		628D89E01A26EF0600268618 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		62A35DAD1A26219400EF008A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,15 +97,15 @@
 			isa = PBXGroup;
 			children = (
 				6227F8101A14749B00AD6998 /* 楪祈1.jpg */,
-				628A09C81A008BE300D8FCBE /* Enemy.swift */,
-				62064E1D19FFB8D00012B5F9 /* Boy.swift */,
 				62064DF719FFB65D0012B5F9 /* Supporting Files */,
 				62064DF919FFB65D0012B5F9 /* AppDelegate.swift */,
+				623016AD1B3BB3C40025E726 /* Boy.swift */,
+				623016B01B3BB3DC0025E726 /* Enemy.swift */,
 				62064DFB19FFB65D0012B5F9 /* GameScene.sks */,
-				62064DFD19FFB65D0012B5F9 /* GameScene.swift */,
-				62064DFF19FFB65D0012B5F9 /* GameViewController.swift */,
+				623016A71B3BB2E80025E726 /* GameViewController.swift */,
+				623016A41B3BB2BE0025E726 /* GameScene.swift */,
+				623016AA1B3BB3640025E726 /* Images.xcassets */,
 				62A35DAD1A26219400EF008A /* Main.storyboard */,
-				62064E0419FFB65D0012B5F9 /* Images.xcassets */,
 				62064E0619FFB65D0012B5F9 /* LaunchScreen.xib */,
 			);
 			path = "晒跑校园alpha";
@@ -175,7 +180,8 @@
 		62064DEC19FFB65D0012B5F9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "刘炳辰";
 				TargetAttributes = {
 					62064DF319FFB65D0012B5F9 = {
@@ -213,9 +219,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6227F8111A14749B00AD6998 /* 楪祈1.jpg in Resources */,
+				623016AB1B3BB3640025E726 /* Images.xcassets in Resources */,
 				62A35DAE1A26219400EF008A /* Main.storyboard in Resources */,
 				62064E0819FFB65D0012B5F9 /* LaunchScreen.xib in Resources */,
-				62064E0519FFB65D0012B5F9 /* Images.xcassets in Resources */,
 				62064DFC19FFB65D0012B5F9 /* GameScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				623016AC1B3BB3640025E726 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,11 +241,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62064DFE19FFB65D0012B5F9 /* GameScene.swift in Sources */,
-				628A09C91A008BE300D8FCBE /* Enemy.swift in Sources */,
-				62064E0019FFB65D0012B5F9 /* GameViewController.swift in Sources */,
-				62064E1E19FFB8D00012B5F9 /* Boy.swift in Sources */,
+				623016A81B3BB2E80025E726 /* GameViewController.swift in Sources */,
+				623016B11B3BB3DC0025E726 /* Enemy.swift in Sources */,
+				623016A51B3BB2BE0025E726 /* GameScene.swift in Sources */,
 				62064DFA19FFB65D0012B5F9 /* AppDelegate.swift in Sources */,
+				623016AE1B3BB3C40025E726 /* Boy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +253,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				623016A61B3BB2BE0025E726 /* GameScene.swift in Sources */,
+				623016B21B3BB3DC0025E726 /* Enemy.swift in Sources */,
+				623016A91B3BB2E80025E726 /* GameViewController.swift in Sources */,
+				623016AF1B3BB3C40025E726 /* Boy.swift in Sources */,
 				62064E1419FFB65D0012B5F9 /* ____alphaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +303,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -306,7 +318,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -342,7 +354,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -359,6 +371,7 @@
 				INFOPLIST_FILE = "晒跑校园alpha/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LiuBingchen.universe.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "晒跑校园alpha/晒跑校园alpha-Bridging-Header.h";
@@ -377,6 +390,7 @@
 				INFOPLIST_FILE = "晒跑校园alpha/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LiuBingchen.universe.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "晒跑校园alpha/晒跑校园alpha-Bridging-Header.h";
@@ -397,7 +411,9 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "晒跑校园alphaTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LiuBingchen.universe.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/晒跑校园alpha.app/晒跑校园alpha";
 			};
@@ -412,7 +428,9 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "晒跑校园alphaTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LiuBingchen.universe.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/晒跑校园alpha.app/晒跑校园alpha";
 			};

@@ -2,8 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "跳04.png"
+      "filename" : "bgc.jpg",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",

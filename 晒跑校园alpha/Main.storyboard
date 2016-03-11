@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LVB-YS-i5n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LVB-YS-i5n">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
@@ -19,10 +21,14 @@
                             <userLayoutGuide location="297" affinity="minY"/>
                         </userGuides>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgc" translatesAutoresizingMaskIntoConstraints="NO" id="4lx-P5-d0A">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0KZ-cj-IJU">
-                                <rect key="frame" x="469" y="213.5" width="30" height="33"/>
+                                <rect key="frame" x="469" y="214" width="30" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="难">
+                                <state key="normal" title="H">
                                     <color key="titleColor" red="0.33293582847093284" green="1" blue="0.90003383601394638" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -31,9 +37,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L6w-iu-k7f">
-                                <rect key="frame" x="507" y="213.5" width="30" height="33"/>
+                                <rect key="frame" x="507" y="214" width="30" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="中">
+                                <state key="normal" title="M">
                                     <color key="titleColor" red="0.33293582849999998" green="1" blue="0.90003383599999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -42,9 +48,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HF5-G0-d1w">
-                                <rect key="frame" x="545" y="213.5" width="30" height="33"/>
+                                <rect key="frame" x="545" y="214" width="30" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="易">
+                                <state key="normal" title="L">
                                     <color key="titleColor" red="0.33293582849999998" green="1" blue="0.90003383599999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -52,10 +58,10 @@
                                     <action selector="setHardOrEasy:" destination="LVB-YS-i5n" eventType="touchDown" id="hGp-KW-EjS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXH-Ic-RUQ">
-                                <rect key="frame" x="486" y="271" width="84" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXH-Ic-RUQ">
+                                <rect key="frame" x="476" y="271" width="106" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="开始游戏">
+                                <state key="normal" title="Start Game">
                                     <color key="titleColor" red="0.33293582849999998" green="1" blue="0.90003383599999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -63,10 +69,10 @@
                                     <action selector="GameStart:" destination="LVB-YS-i5n" eventType="touchDown" id="HSS-lr-CYB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyo-19-RQh">
-                                <rect key="frame" x="495" y="343.5" width="68" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyo-19-RQh">
+                                <rect key="frame" x="487" y="344" width="85" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="选择图片">
+                                <state key="normal" title="Pick Avatar">
                                     <color key="titleColor" red="0.33293582849999998" green="1" blue="0.90003383599999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -74,10 +80,10 @@
                                     <action selector="loadPhoto:" destination="LVB-YS-i5n" eventType="touchDown" id="Krh-wb-hGd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3b-vo-uix">
-                                <rect key="frame" x="372" y="9" width="38" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3b-vo-uix">
+                                <rect key="frame" x="368" y="9" width="46" height="35"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
-                                <state key="normal" title="返回">
+                                <state key="normal" title="Back">
                                     <color key="titleColor" red="0.96957859850000006" green="0.45218303599999998" blue="0.42464099890000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -86,7 +92,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="晒跑~校园~" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpC-lV-H6i">
-                                <rect key="frame" x="20" y="13" width="145.5" height="33.5"/>
+                                <rect key="frame" x="20" y="13" width="146" height="34"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" red="0.96957859850000006" green="0.45218303599999998" blue="0.42464099890000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -98,10 +104,10 @@
                                     <constraint firstAttribute="height" constant="160" id="SlD-jF-P7g"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfu-HM-khU">
-                                <rect key="frame" x="27" y="263.5" width="68" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfu-HM-khU">
+                                <rect key="frame" x="21" y="264" width="81" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="使用图片">
+                                <state key="normal" title="Use image">
                                     <color key="titleColor" red="0.33293582849999998" green="1" blue="0.90003383599999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -109,10 +115,10 @@
                                     <action selector="savePhoto:" destination="LVB-YS-i5n" eventType="touchDown" id="3R0-Yy-4Z9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZ3-ai-qqk">
-                                <rect key="frame" x="27" y="323.5" width="68" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZ3-ai-qqk">
+                                <rect key="frame" x="18" y="324" width="87" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="不用图片">
+                                <state key="normal" title="Hide image">
                                     <color key="titleColor" red="0.33293582849999998" green="1" blue="0.90003383599999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -121,7 +127,7 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iRL-M9-RWP">
-                                <rect key="frame" x="193.5" y="383" width="153" height="31"/>
+                                <rect key="frame" x="194" y="383" width="153" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="149" id="caj-9K-h5t"/>
                                 </constraints>
@@ -133,11 +139,14 @@
                         <color key="backgroundColor" red="1" green="0.99058229399999997" blue="0.67469671860000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="HF5-G0-d1w" secondAttribute="trailing" constant="25" id="4ct-Ye-UeD"/>
+                            <constraint firstItem="4lx-P5-d0A" firstAttribute="top" secondItem="bdc-N1-crn" secondAttribute="topMargin" id="5eM-41-ENn"/>
+                            <constraint firstItem="b3d-qh-BLL" firstAttribute="top" secondItem="4lx-P5-d0A" secondAttribute="bottom" id="6BV-Mi-rUh"/>
                             <constraint firstAttribute="centerY" secondItem="0Eo-RU-3cr" secondAttribute="centerY" constant="10" id="AoN-7e-Qq1"/>
                             <constraint firstItem="CpC-lV-H6i" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leading" constant="20" id="DYH-Jw-fWa"/>
                             <constraint firstAttribute="trailing" secondItem="0KZ-cj-IJU" secondAttribute="trailing" constant="101" id="GKM-Ef-87E"/>
                             <constraint firstAttribute="centerY" secondItem="vyo-19-RQh" secondAttribute="centerY" constant="-60" id="Gn4-AM-4oH"/>
                             <constraint firstAttribute="centerX" secondItem="0Eo-RU-3cr" secondAttribute="centerX" constant="30" id="OdL-jD-a6E"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4lx-P5-d0A" secondAttribute="trailing" constant="-20" id="Ohv-v7-2Um"/>
                             <constraint firstAttribute="trailing" secondItem="vyo-19-RQh" secondAttribute="trailing" constant="37" id="R8K-zj-mJc"/>
                             <constraint firstItem="CpC-lV-H6i" firstAttribute="top" secondItem="bdc-N1-crn" secondAttribute="top" constant="13" id="SFz-tc-pgM"/>
                             <constraint firstAttribute="centerX" secondItem="iRL-M9-RWP" secondAttribute="centerX" constant="30" id="TUm-ba-2aQ"/>
@@ -147,6 +156,7 @@
                             <constraint firstItem="L6w-iu-k7f" firstAttribute="top" secondItem="0Eo-RU-3cr" secondAttribute="top" id="aPZ-8r-tyz"/>
                             <constraint firstAttribute="trailing" secondItem="B3b-vo-uix" secondAttribute="trailing" constant="190" id="cEi-b6-7kJ"/>
                             <constraint firstItem="L6w-iu-k7f" firstAttribute="baseline" secondItem="0KZ-cj-IJU" secondAttribute="baseline" id="cqd-So-bkH"/>
+                            <constraint firstItem="4lx-P5-d0A" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leadingMargin" constant="-20" id="dLb-5i-9sa"/>
                             <constraint firstItem="iRL-M9-RWP" firstAttribute="top" secondItem="0Eo-RU-3cr" secondAttribute="bottom" constant="13" id="iHF-hJ-xpK"/>
                             <constraint firstItem="uZ3-ai-qqk" firstAttribute="leading" secondItem="bdc-N1-crn" secondAttribute="leading" constant="27" id="iuo-1C-ukT"/>
                             <constraint firstItem="B3b-vo-uix" firstAttribute="top" secondItem="bdc-N1-crn" secondAttribute="top" constant="9" id="mDX-nr-ZFx"/>
@@ -163,6 +173,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="bgc" destination="4lx-P5-d0A" id="TcN-7A-mjW"/>
                         <outlet property="chooseImgButton" destination="vyo-19-RQh" id="A1q-nB-jO0"/>
                         <outlet property="clearButton" destination="uZ3-ai-qqk" id="AW5-wV-Lqe"/>
                         <outlet property="confirmButton" destination="xfu-HM-khU" id="HMF-k1-oyN"/>
@@ -177,9 +188,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btX-cZ-eVz" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="260" y="366"/>
         </scene>
     </scenes>
     <resources>
+        <image name="bgc" width="1920" height="1200"/>
         <image name="楪祈1" width="1920" height="1200"/>
     </resources>
 </document>

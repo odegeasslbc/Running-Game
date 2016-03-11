@@ -40,7 +40,7 @@ class GameOverScene:SKScene{
         labelScore.position = CGPointMake(self.size.width/2, self.size.height*0.56)
         self.addChild(labelScore)
 
-        buttonShare.text = "截图或分享"
+        buttonShare.text = "share"
         buttonShare.fontSize = 25
         buttonShare.fontColor = SKColor.blackColor()
         buttonShare.position = CGPointMake(self.size.width/2, self.size.height*0.2)
@@ -65,7 +65,7 @@ class GameOverScene:SKScene{
     
     
     
-    func didTouchButton(#button:SKLabelNode,location:CGPoint) -> Bool{
+    func didTouchButton(button button:SKLabelNode,location:CGPoint) -> Bool{
         if button.position.y-50 < location.y && location.y < button.position.y+50 && button.position.x-60 < location.x && location.x < button.position.x+60{
             return true
         }else{
@@ -73,9 +73,9 @@ class GameOverScene:SKScene{
         }
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
 
-        var touch:UITouch = touches.first as! UITouch
+        let touch:UITouch = touches.first! as UITouch
         let location = touch.locationInNode(self)
 
         if(didTouchButton(button:labelRestart,location:location)){
@@ -93,8 +93,8 @@ class GameOverScene:SKScene{
             //最后通过 drawViewHierarchyInRect 方法实现 获得图片
             let tex:SKTexture = self.view!.textureFromNode(self)!
             let view = SKView(frame :CGRectMake(0, 0, tex.size().width*0.3, tex.size().height*0.3))
-            println("tex.size.width:\(tex.size().width)")
-            println("view.frame.width:\(view.frame.width)")
+            print("tex.size.width:\(tex.size().width)")
+            print("view.frame.width:\(view.frame.width)")
             let sprite = SKSpriteNode(texture: tex)
             let label = SKLabelNode(text: "晒跑~校园~")
             label.fontSize = 50
@@ -127,7 +127,7 @@ class GameOverScene:SKScene{
         //弹出 保存成功 提示
         let alert = UIAlertView()
         alert.title = ""
-        alert.message = "截图保存成功"
+        alert.message = "success save the shortcut"
         alert.addButtonWithTitle("Ok")
         alert.show()
 
@@ -320,7 +320,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
          
         }
 
-        var newBuilding = Enemy.createBuilding()
+        let newBuilding = Enemy.createBuilding()
     
         newBuilding.position = CGPointMake(self.frame.size.width + newBuilding.size.width/2,self.frame.height * 0.45 - CGFloat(tmpHeight))
         newBuilding.zPosition = -1
@@ -359,7 +359,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
         let tmp = arc4random() % 210
         
         
-        var newEnemy = Enemy.createBlanketEnemy()
+        let newEnemy = Enemy.createBlanketEnemy()
         
         newEnemy.position = CGPointMake(self.frame.size.width + newEnemy.size.width/2,self.frame.height * 0.45 + CGFloat( tmp))
         newEnemy.zPosition = 1
@@ -381,7 +381,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
         let tmp = arc4random() % 100
         
         
-        var newEnemy = Enemy.createPillowEnemy()
+        let newEnemy = Enemy.createPillowEnemy()
         
         newEnemy.position = CGPointMake(self.frame.size.width + newEnemy.size.width/2,self.frame.height * 0.45 + CGFloat( tmp))
         newEnemy.zPosition = 1
@@ -399,7 +399,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
     }
     
     //判断被按下按钮，手指触摸的位置是否与按钮位置重合
-    func didTouchButton(#button:SKSpriteNode,location:CGPoint) -> Bool{
+    func didTouchButton(button button:SKSpriteNode,location:CGPoint) -> Bool{
         if button.position.y-50 < location.y && location.y < button.position.y+50 && button.position.x-50 < location.x && location.x < button.position.x+50{
             return true
         }else{
@@ -539,7 +539,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
         moving.speed = 1
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
         
         for touch: AnyObject in touches {
@@ -626,7 +626,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
             if(tmpScore == 10){
                 score++
                 tmpScore = 0
-                scoreLabelNode.text = String("分数 : \(score)")
+                scoreLabelNode.text = String("score : \(score)")
                 // Add a little visual feedback for the score increment
                 scoreLabelNode.runAction(SKAction.sequence([SKAction.scaleTo(1.5, duration:NSTimeInterval(0.1)), SKAction.scaleTo(1.0, duration:NSTimeInterval(0.1))]))
             }

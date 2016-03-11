@@ -2,8 +2,8 @@
 //  Boy.swift
 //  晒跑校园alpha
 //
-//  Created by 刘炳辰 on 14/10/28.
-//  Copyright (c) 2014年 刘炳辰. All rights reserved.
+//  Created by Bingchen Liu on 14/10/28.
+//  Copyright (c) 2014年 Bingchen Liu. All rights reserved.
 //
 import SpriteKit
 import Foundation
@@ -28,7 +28,7 @@ class Boy:SKSpriteNode {
         
         
         let fileManager = NSFileManager()
-        let docPath = NSHomeDirectory() + "/Documents"
+        _ = NSHomeDirectory() + "/Documents"
         let filePath = NSHomeDirectory() + "/Documents/head.png"
 
         if (fileManager.fileExistsAtPath(filePath) ) {
@@ -50,7 +50,7 @@ class Boy:SKSpriteNode {
             
         }
         else{
-        println("no")
+        print("no")
         }
         self.physicsBody = SKPhysicsBody(texture: boyTexture1, size:boyTexture1.size())
 

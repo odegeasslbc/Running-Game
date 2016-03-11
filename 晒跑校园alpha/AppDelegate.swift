@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  晒跑校园alpha
 //
-//  Created by 刘炳辰 on 14/10/28.
-//  Copyright (c) 2014年 刘炳辰. All rights reserved.
+//  Created by Bingchen Liu on 14/10/28.
+//  Copyright (c) 2014年 Bingchen Liu. All rights reserved.
 //
 
 import UIKit

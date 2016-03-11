@@ -100,6 +100,11 @@
       "scale" : "2x"
     },
     {
+      "idiom" : "ipad",
+      "size" : "83.5x83.5",
+      "scale" : "2x"
+    },
+    {
       "size" : "120x120",
       "idiom" : "car",
       "filename" : "面码_180-3.png",
