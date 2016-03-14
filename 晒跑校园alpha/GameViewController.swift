@@ -10,6 +10,7 @@ import UIKit
 import SpriteKit
 import AssetsLibrary
 
+var delayTime:CGFloat = 1.1
 
 extension SKNode {
     class func unarchiveFromFile(file : NSString) -> SKNode? {
@@ -54,7 +55,6 @@ class GameViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     var filter: CIFilter!
     var beginImage: CIImage!
     var orientation: UIImageOrientation = .Up
-    var delayTime:CGFloat = 1.1
 
     @IBAction func goBack(sender: AnyObject) {
         imageView.layer.cornerRadius = 80;
@@ -65,12 +65,12 @@ class GameViewController: UIViewController,UIImagePickerControllerDelegate,UINav
     
     //设置游戏难易程度
     @IBAction func setHardOrEasy(button:UIButton!){
-        if button.titleLabel?.text == "hard"{
+        if button.titleLabel?.text == "H"{
             delayTime = 0.8
-        } else if button.titleLabel?.text == "mid"{
+        } else if button.titleLabel?.text == "M"{
             delayTime = 1.1
-        } else if button.titleLabel?.text == "easy"{
-            delayTime = 1.9
+        } else if button.titleLabel?.text == "L"{
+            delayTime = 1.4
         }
     }
     
@@ -92,7 +92,7 @@ class GameViewController: UIViewController,UIImagePickerControllerDelegate,UINav
             /* Set the scale mode to scale to fit the window */
             */
             gameScene.scaleMode = .AspectFill
-            gameScene.delayTime = delayTime
+
             skView.presentScene(gameScene)
             
             gameStartButton.hidden = true
@@ -117,9 +117,14 @@ class GameViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         
         pickerC.delegate = self
         
+        //let popover = UIPopoverController(contentViewController: pickerC)
+        //popover.presentPopoverFromRect(self.chooseImgButton.frame, inView: self.view, permittedArrowDirections: .Up, animated: true)
+        
         self.presentViewController(pickerC, animated: true, completion: nil)
         
     }
+    
+    
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         self.dismissViewControllerAnimated(true, completion: nil);
@@ -130,6 +135,7 @@ class GameViewController: UIViewController,UIImagePickerControllerDelegate,UINav
         self.amountSliderValueChanged(fliterSlider)
     }
 
+    
     //保存图片
     @IBAction func savePhoto(sender: AnyObject) {
         let tmpImage = imageView.image
@@ -208,6 +214,10 @@ class GameViewController: UIViewController,UIImagePickerControllerDelegate,UINav
 
     }
 
+    override func viewWillAppear(animated: Bool) {
+        imageView.layer.cornerRadius = 80;
+    }
+    
     override func shouldAutorotate() -> Bool {
         return true
     }

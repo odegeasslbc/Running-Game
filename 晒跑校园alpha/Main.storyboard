@@ -21,7 +21,7 @@
                             <userLayoutGuide location="297" affinity="minY"/>
                         </userGuides>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgc" translatesAutoresizingMaskIntoConstraints="NO" id="4lx-P5-d0A">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="school" translatesAutoresizingMaskIntoConstraints="NO" id="4lx-P5-d0A">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
@@ -58,19 +58,19 @@
                                     <action selector="setHardOrEasy:" destination="LVB-YS-i5n" eventType="touchDown" id="hGp-KW-EjS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXH-Ic-RUQ">
-                                <rect key="frame" x="476" y="271" width="106" height="38"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXH-Ic-RUQ">
+                                <rect key="frame" x="446" y="270" width="124" height="40"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <state key="normal" title="Start Game">
-                                    <color key="titleColor" red="0.33293582849999998" green="1" blue="0.90003383599999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.91443999693214317" green="1" blue="0.06112088545737604" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="GameStart:" destination="LVB-YS-i5n" eventType="touchDown" id="HSS-lr-CYB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyo-19-RQh">
-                                <rect key="frame" x="487" y="344" width="85" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyo-19-RQh">
+                                <rect key="frame" x="478" y="344" width="85" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Pick Avatar">
                                     <color key="titleColor" red="0.33293582849999998" green="1" blue="0.90003383599999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -80,8 +80,8 @@
                                     <action selector="loadPhoto:" destination="LVB-YS-i5n" eventType="touchDown" id="Krh-wb-hGd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3b-vo-uix">
-                                <rect key="frame" x="368" y="9" width="46" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3b-vo-uix">
+                                <rect key="frame" x="364" y="9" width="46" height="35"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="Back">
                                     <color key="titleColor" red="0.96957859850000006" green="0.45218303599999998" blue="0.42464099890000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -103,9 +103,14 @@
                                     <constraint firstAttribute="width" constant="160" id="2wJ-Tv-OXB"/>
                                     <constraint firstAttribute="height" constant="160" id="SlD-jF-P7g"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="80"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfu-HM-khU">
-                                <rect key="frame" x="21" y="264" width="81" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfu-HM-khU">
+                                <rect key="frame" x="27" y="264" width="81" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Use image">
                                     <color key="titleColor" red="0.33293582849999998" green="1" blue="0.90003383599999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -115,8 +120,8 @@
                                     <action selector="savePhoto:" destination="LVB-YS-i5n" eventType="touchDown" id="3R0-Yy-4Z9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZ3-ai-qqk">
-                                <rect key="frame" x="18" y="324" width="87" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZ3-ai-qqk">
+                                <rect key="frame" x="27" y="324" width="87" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Hide image">
                                     <color key="titleColor" red="0.33293582849999998" green="1" blue="0.90003383599999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -192,7 +197,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bgc" width="1920" height="1200"/>
+        <image name="school" width="1920" height="1080"/>
         <image name="楪祈1" width="1920" height="1200"/>
     </resources>
 </document>

@@ -82,30 +82,32 @@ class GameOverScene:SKScene{
             let gameStartScene:GameScene = GameScene(size:self.size)
             let reveal = SKTransition.flipHorizontalWithDuration(0.5)
             gameStartScene.scaleMode = .AspectFill
-            gameStartScene.delayTime = tmpDelay
+            delayTime = tmpDelay
             self.view?.presentScene(gameStartScene, transition: reveal)
         }
         
         if(didTouchButton(button: buttonShare, location: location)){
-            
             //截取当前屏幕截图
             //方法：布置一个新场景scene，建立一个新view，以目标截图为一个新texture建立新spriteNode
             //最后通过 drawViewHierarchyInRect 方法实现 获得图片
-            let tex:SKTexture = self.view!.textureFromNode(self)!
-            let view = SKView(frame :CGRectMake(0, 0, tex.size().width*0.3, tex.size().height*0.3))
-            print("tex.size.width:\(tex.size().width)")
-            print("view.frame.width:\(view.frame.width)")
-            let sprite = SKSpriteNode(texture: tex)
+            let aimTexture:SKTexture = self.view!.textureFromNode(self)!
+            let view = SKView(frame :CGRectMake(0, 0, aimTexture.size().width*0.3, aimTexture.size().height*0.3))
+
+            let sprite = SKSpriteNode(texture: aimTexture)
+            sprite.setScale(0.3)
+            sprite.position = CGPointMake(CGRectGetMidX(view.frame), CGRectGetMidY(view.frame) )
+            
             let label = SKLabelNode(text: "晒跑~校园~")
             label.fontSize = 50
             label.fontName = "Chalkduster"
             label.fontColor = SKColor(red: 255.0/255.0, green: 150/255.0, blue: 150/255.0, alpha: 1.0)
-            sprite.setScale(0.3)
-            let scene = SKScene(size: sprite.size)
             label.position = CGPointMake(view.frame.width/2, view.frame.height*0.84)
-            sprite.position = CGPointMake(CGRectGetMidX(view.frame), CGRectGetMidY(view.frame) )
+
+            
+            let scene = SKScene(size: sprite.size)
             scene.addChild(sprite)
             scene.addChild(label)
+            
             view.presentScene(scene)
             UIGraphicsBeginImageContextWithOptions(view.bounds.size, true, 0.0);
             view.drawViewHierarchyInRect(view.bounds , afterScreenUpdates: true)
@@ -119,7 +121,6 @@ class GameOverScene:SKScene{
             (self.view!.nextResponder() as! UIViewController).presentViewController(activityController, animated: true, completion: nil)
             
             //UIImageWriteToSavedPhotosAlbum(image,nil,nil,nil)
-            //showAlert()
         }
     }
     
@@ -149,7 +150,7 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
     var scoreLabelNode:SKLabelNode!
     
     //调整游戏难度，也就是enemy出现频率
-    var delayTime:CGFloat!
+    //var delayTime:CGFloat!
     //按钮
     let buttonJump = SKSpriteNode(imageNamed: "buttonJump1")
     let buttonRestart = SKSpriteNode(imageNamed: "beizi1")
@@ -288,10 +289,6 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
     //生成一系列building
     func addBuilding(){
         
-        if delayTime == nil{
-            delayTime = 0.8
-        }
-        
         let createBuilding = SKAction.runBlock({() in self.createBuilding()})
         let delay = SKAction.waitForDuration(NSTimeInterval(delayTime*2))
         let createForever = SKAction.repeatActionForever(SKAction.sequence([createBuilding,delay]))
@@ -342,10 +339,6 @@ class GameScene: SKScene , SKPhysicsContactDelegate{
     
     //生成一系列enemy
     func addEnemy(){
-        
-        if delayTime == nil{
-            delayTime = 0.8
-        }
         
         let createBlanketEnemy = SKAction.runBlock({() in self.createBlanketEnemy()})
         let createPillowEnemy = SKAction.runBlock({() in self.createPillowEnemy()})
