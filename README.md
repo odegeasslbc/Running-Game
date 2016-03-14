@@ -104,7 +104,49 @@ Key features:
         }
     }
 ```
-###3. SpriteKit
+
+###3. Social Sharing 
+![alt tag](https://cloud.githubusercontent.com/assets/9973368/13762498/c1f3847a-ea15-11e5-9ff3-b2b98de3369b.gif)
+```swift
+        if(didTouchButton(button: buttonShare, location: location)){
+            //截取当前屏幕截图
+            //方法：布置一个新场景scene，建立一个新view，以目标截图为一个新texture建立新spriteNode
+            //最后通过 drawViewHierarchyInRect 方法实现 获得图片
+            let aimTexture:SKTexture = self.view!.textureFromNode(self)!
+            let view = SKView(frame :CGRectMake(0, 0, aimTexture.size().width*0.3, aimTexture.size().height*0.3))
+
+            let sprite = SKSpriteNode(texture: aimTexture)
+            sprite.setScale(0.3)
+            sprite.position = CGPointMake(CGRectGetMidX(view.frame), CGRectGetMidY(view.frame) )
+            
+            let label = SKLabelNode(text: "晒跑~校园~")
+            label.fontSize = 50
+            label.fontName = "Chalkduster"
+            label.fontColor = SKColor(red: 255.0/255.0, green: 150/255.0, blue: 150/255.0, alpha: 1.0)
+            label.position = CGPointMake(view.frame.width/2, view.frame.height*0.84)
+
+            
+            let scene = SKScene(size: sprite.size)
+            scene.addChild(sprite)
+            scene.addChild(label)
+            
+            view.presentScene(scene)
+            UIGraphicsBeginImageContextWithOptions(view.bounds.size, true, 0.0);
+            view.drawViewHierarchyInRect(view.bounds , afterScreenUpdates: true)
+            let image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext();
+
+            let text = "I get \(self.score) points in running game，join with me now！     download url：www.bingchen.com"
+            let activityItems = [image,text]
+            let activityController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+            activityController
+            (self.view!.nextResponder() as! UIViewController).presentViewController(activityController, animated: true, completion: nil)
+            
+            //UIImageWriteToSavedPhotosAlbum(image,nil,nil,nil)
+        }
+```
+
+###4. SpriteKit
 
 ####Usage
 
