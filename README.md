@@ -203,4 +203,68 @@ class Enemy:SKSpriteNode{
         enemys.addChild(newEnemy)
     }
 ```
-              
+
+###2. UIImagePicker  
+```swift
+    //load the imagepickercontroller
+    @IBAction func loadPhoto(sender : AnyObject) {
+        
+        let pickerC = UIImagePickerController()
+        
+        pickerC.delegate = self
+        
+        //let popover = UIPopoverController(contentViewController: pickerC)
+        //popover.presentPopoverFromRect(self.chooseImgButton.frame, inView: self.view, permittedArrowDirections: .Up, animated: true)
+        
+        self.presentViewController(pickerC, animated: true, completion: nil)
+        
+    }
+    
+    //get the chosen image 
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        self.dismissViewControllerAnimated(true, completion: nil);
+        let gotImage = image
+        beginImage = CIImage(image: gotImage)
+        filter.setValue(beginImage, forKey: kCIInputImageKey)
+        orientation = gotImage.imageOrientation
+        self.amountSliderValueChanged(fliterSlider)
+    }
+
+    
+    //save image
+    @IBAction func savePhoto(sender: AnyObject) {
+        let tmpImage = imageView.image
+        
+        let imageFrame:CGSize = CGSizeMake(100, 100)
+        let image = scaleToSize(tmpImage!, size: imageFrame)
+        let filePath = NSHomeDirectory() + "/Documents/head.png"
+        //println(filePath)
+        UIImageJPEGRepresentation(image, 1.0)!.writeToFile(filePath, atomically: true)
+    }
+    
+    //resize the image to make it fit in the game scene
+    func scaleToSize(img:UIImage , size: CGSize) -> UIImage{
+        UIGraphicsBeginImageContextWithOptions(size,false,1.0)
+        imageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        
+        _ = UIGraphicsGetCurrentContext()
+        let rect = CGRectMake(0, 0, size.width, size.height)
+
+        img.drawInRect(rect)
+        
+        let newImg = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImg
+    }
+    
+    @IBAction func clearPhoto(sender:AnyObject) {
+        let filePath = NSHomeDirectory() + "/Documents/head.png"
+        let fileManager = NSFileManager()
+        
+        do{
+            try fileManager.removeItemAtPath(filePath)
+        }catch{
+            print(error)
+        }
+    }
+```
