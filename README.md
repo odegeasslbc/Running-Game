@@ -12,7 +12,9 @@ Key features:
 4. Pillow bullet can only kill pillow enemy, so does blanket.
 
 ![alt tag](https://cloud.githubusercontent.com/assets/9973368/13761379/9c5f3d0a-ea0e-11e5-9b72-7fabbbe8eb32.gif)
+
 ##Tech specs
+
 ###1. Filter on Image
 ![alt tag](https://cloud.githubusercontent.com/assets/9973368/13761808/305aba50-ea11-11e5-95bb-92e26b6fdc7f.gif)
 ```swift
@@ -38,6 +40,7 @@ Key features:
     }
 ```
 ###2. UIImagePicker  
+![alt tag](https://cloud.githubusercontent.com/assets/9973368/13761962/56f28eb2-ea12-11e5-9e4e-9d648555926b.gif)
 ```swift
     //load the imagepickercontroller
     @IBAction func loadPhoto(sender : AnyObject) {
